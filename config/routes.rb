@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#show'
+    root 'home#show'
 
-  devise_for :users
+    devise_for :users
 
-  resources :artists
+    resources :artists do
+        resources :releases
+    end
 end
